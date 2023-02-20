@@ -6,27 +6,26 @@ class Product
     public $name;
     public $typology;
     public $material;
-    public $color;
     public $price;
     public $quantity;
-    public $availability;
     public $recycled;
+    public $color;
+    public $availability;
 
-    public function __construct($name, Category $typology, $material, $color, $price, $quantity = 1, $availability = '', $recycled = 'no')
+    public function __construct($name, Category $typology, $material, $price, $quantity = 1, $recycled = 'no', $color = null, $availability = '')
     {
         $this->name = $name;
         $this->typology = $typology;
         $this->material = $material;
-        $this->color = $color;
         $this->price = $price;
-        $this->availability = $availability;
+        $this->quantity = $quantity;
         $this->recycled = $recycled;
+        $this->color = $color;
+        $this->availability = $availability;
     }
 
     public function is_available($number)
     {
         if(!is_numeric($number) || $number < 1) return $this->availability = $number;
     }
-
-
 }
