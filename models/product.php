@@ -1,4 +1,5 @@
 <?php
+include_once __DIR__ . './category.php';
 
 class Product
 {
@@ -11,7 +12,7 @@ class Product
     public $availability;
     public $recycled;
 
-    public function __construct($name, $typology, $material, $color, $price, $quantity = 1, $availability = '', $recycled = 'no')
+    public function __construct($name, Category $typology, $material, $color, $price, $quantity = 1, $availability = '', $recycled = 'no')
     {
         $this->name = $name;
         $this->typology = $typology;
