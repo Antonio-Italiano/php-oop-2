@@ -1,6 +1,7 @@
 <?php
 
-include_once __DIR__ . './models/product.php';
+require_once __DIR__ . './models/product.php';
+require_once __DIR__ . './data/products.php';
 
 ?>
 
@@ -15,6 +16,21 @@ include_once __DIR__ . './models/product.php';
     <title>OOP E-commecre</title>
 </head>
 <body>
+    <div class="container">
+        <div class="row justify-content-between">
+            <?php foreach ($products as $product) : ?>
+            <div class="col-5 my-4 text-center border border-dark">
+                <h1> <?= $product->name ?> </h1>
+                <h4> <?= $product->typology->name ?> </h4>
+                <h5> <?= $product->material ?> </h5>
+                <h2 class="text-danger">$ <?= $product->price ?> </h2>
+                <h3> <?= $product->recycled ?> </h3>
+                <h4> <?= $product->color ?> </h4>
+                <h6 class="text-danger"> <?= $product->availability($product->quantity) ?> </h6>
+            </div>
+            <?php endforeach ; ?>
+        </div>
+    </div>
     
 </body>
 </html>
