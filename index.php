@@ -1,5 +1,7 @@
 <?php
 
+include_once __DIR__ . './models/product.php';
+
 ?>
 
 <!DOCTYPE html>
