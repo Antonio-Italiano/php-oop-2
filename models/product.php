@@ -5,22 +5,18 @@ class Product
 {
     public $name;
     public $typology;
-    public $material;
     public $price;
     public $quantity;
     public $recycled;
-    public $color;
     public $availability;
 
-    public function __construct($name, Category $typology, $material, $price, $quantity = 1, $recycled = '', $color = null, $availability = '')
+    public function __construct($name, Category $typology, $price, $quantity = 1, $recycled = '', $availability = '')
     {
         $this->name = $name;
         $this->typology = $typology;
-        $this->material = $material;
         $this->price = $price;
         $this->quantity = $quantity;
         $this->recycled = $recycled;
-        $this->color = $color;
         $this->availability = $availability;
     }
 
